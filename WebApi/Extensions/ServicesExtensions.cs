@@ -73,10 +73,10 @@ namespace WebApi.Extensions
                 if (systemTextJsonOutputFormatter != null)
                 {
                     systemTextJsonOutputFormatter.SupportedMediaTypes
-                    .Add("application/vnd.btkakademi.hateoas+json");
+                    .Add("application/vnd.hateoas+json");
 
                     systemTextJsonOutputFormatter.SupportedMediaTypes
-                    .Add("application/vnd.btkakademi.apiroot+json");
+                    .Add("application/vnd.apiroot+json");
                 }
 
                 var xmlOutputFormatter = config
@@ -86,10 +86,10 @@ namespace WebApi.Extensions
                 if (xmlOutputFormatter is not null)
                 {
                     xmlOutputFormatter.SupportedMediaTypes
-                    .Add("application/vnd.btkakademi.hateoas+xml");
+                    .Add("application/vnd.hateoas+xml");
 
                     xmlOutputFormatter.SupportedMediaTypes
-                    .Add("application/vnd.btkakademi.apiroot+xml");
+                    .Add("application/vnd.apiroot+xml");
                 }
             });
         }
@@ -195,19 +195,11 @@ namespace WebApi.Extensions
                 s.SwaggerDoc("v1", 
                     new OpenApiInfo 
                     { 
-                        Title = "BTK Akademi", 
+                        Title = "Version 1", 
                         Version = "v1",
-                        Description = "BTK Akademi ASP.NET Core Web API",
-                        TermsOfService = new Uri("https://www.btkakademi.gov.tr/"),
-                        Contact = new OpenApiContact
-                        {
-                            Name = "Zafer CÖMERT",
-                            Email = "comertzafer@gmail.com",
-                            Url = new Uri("https://www.zafercomert.com")
-                        }
                     });
                 
-                s.SwaggerDoc("v2", new OpenApiInfo { Title = "BTK Akademi", Version = "v2" });
+                s.SwaggerDoc("v2", new OpenApiInfo { Title = "Version 2", Version = "v2" });
 
                 s.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
